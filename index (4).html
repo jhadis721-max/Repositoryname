@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#8b5cf6">
+<title>دنیای یادگیری هفتم</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap');
+:root{--purple:#7652c8;--pink:#f4a6c8;--ink:#302746;--soft:#faf7ff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#f8f2ff,#fff7fb);color:var(--ink);font-family:Vazirmatn,Tahoma,sans-serif}
+header{padding:28px 18px 22px;text-align:center;background:linear-gradient(120deg,#805ad5,#c084fc);color:white;border-radius:0 0 30px 30px}
+header h1{margin:0 0 8px;font-size:clamp(25px,5vw,38px)}header p{margin:6px}.tag{display:inline-block;background:#ffffff30;border:1px solid #ffffff70;border-radius:30px;padding:6px 14px}
+main{max-width:1050px;margin:22px auto;padding:0 14px}.panel{background:#fff;border:1px solid #eee4fb;border-radius:20px;padding:18px;margin:16px 0;box-shadow:0 8px 24px #6b46c114}
+h2{color:var(--purple);margin:0 0 14px;font-size:22px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
+.subject{border:1px solid #eadcfb;border-radius:16px;padding:16px 12px;background:linear-gradient(145deg,#fff,#fcf6ff);text-align:center;cursor:pointer;font-weight:700;color:#49366e}
+.subject:active,button:active{transform:scale(.98)}button{border:0;border-radius:12px;background:var(--purple);color:#fff;padding:10px 16px;font:inherit;cursor:pointer}
+input,textarea,select{width:100%;padding:11px;border:1px solid #ddcfee;border-radius:11px;font:inherit;margin:6px 0 12px;background:#fff;color:var(--ink)}
+textarea{min-height:95px}.muted{color:#7c718e;font-size:14px}.links a{display:inline-block;margin:6px 4px;color:#6741ad}.hidden{display:none}
+.task{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:550px){.task{grid-template-columns:1fr}}
+footer{text-align:center;padding:25px;color:#887a9e}
+</style>
+</head>
+<body>
+<header>
+  <h1>🌸 دنیای یادگیری هفتم 🌸</h1>
+  <p>جایی برای یادگیری، تمرین و پیشرفت</p>
+  <span class="tag">پایه هفتم · کلاس ۷۰۱</span>
+  <p class="tag">تهیه‌کننده: حدیثه جعفری</p>
+</header>
+<main>
+<section class="panel">
+<h2>📚 درس‌های من</h2>
+<p class="muted">برای دیدن منابع هر درس، یکی از درس‌ها را انتخاب کن.</p>
+<div class="grid" id="subjects"></div>
+</section>
+<section class="panel hidden" id="detail">
+<h2 id="subjectTitle">درس</h2>
+<div class="links">
+<a id="bookLink" href="https://chap.sch.ir/" target="_blank" rel="noopener">📖 کتاب‌های درسی در پایگاه کتاب‌های درسی</a><br>
+<a id="videoLink" href="#" target="_blank" rel="noopener">🎬 جست‌وجوی فیلم آموزشی</a><br>
+<a id="exerciseLink" href="#" target="_blank" rel="noopener">✏️ جست‌وجوی نمونه سؤال و تمرین</a>
+</div>
+<label for="notes">یادداشت‌های من برای این درس</label>
+<textarea id="notes" placeholder="نکته‌ها و خلاصه‌های این درس را اینجا بنویس..."></textarea>
+<button id="saveNotes">ذخیره یادداشت</button> <span id="saved" class="muted"></span>
+</section>
+<section class="panel">
+<h2>🗓️ برنامه‌ریز مطالعه</h2>
+<label>تاریخ</label><input type="date" id="studyDate">
+<div class="task"><div><label>کار اول</label><input id="task1" placeholder="مثلاً مطالعه علوم"></div><div><label>کار دوم</label><input id="task2" placeholder="مثلاً حل تمرین ریاضی"></div><div><label>کار سوم</label><input id="task3" placeholder="مثلاً مرور قرآن"></div></div>
+<button id="savePlan">ذخیره برنامه</button> <span id="planSaved" class="muted"></span>
+</section>
+<section class="panel">
+<h2>🧠 آزمونک ریاضی</h2>
+<p>اگر \( -3 + 8 = ؟ \)</p>
+<div class="grid"><button class="answer" data-a="3">۳</button><button class="answer" data-a="5">۵</button><button class="answer" data-a="11">۱۱</button></div>
+<p id="quizResult" class="muted" aria-live="polite"></p>
+</section>
+<section class="panel">
+<h2>🌟 معرفی دانش‌آموز</h2>
+<label>نام و نام خانوادگی</label><input id="studentName" placeholder="نامت را بنویس">
+<label>کلاس</label><input id="studentClass" value="۷۰۱">
+<label>درس مورد علاقه</label><input id="favorite" placeholder="مثلاً علوم">
+<label>علاقه‌مندی‌ها</label><input id="hobbies" placeholder="مثلاً کتاب‌خوانی، نقاشی...">
+<label>هدف من برای امسال</label><textarea id="goal" placeholder="هدف‌هایت را بنویس..."></textarea>
+<button id="saveProfile">ذخیره معرفی</button> <span id="profileSaved" class="muted"></span>
+</section>
+</main>
+<footer>با آرزوی موفقیت برای همه دانش‌آموزان پایه هفتم 💜</footer>
+<script>
+const names=["ریاضی","علوم تجربی","فارسی","نگارش","مطالعات اجتماعی","عربی","زبان انگلیسی","قرآن","پیام‌های آسمان","تفکر و سبک زندگی","کار و فناوری","فرهنگ و هنر"];
+const box=document.getElementById('subjects');
+names.forEach(n=>{const b=document.createElement('button');b.className='subject';b.textContent='📘 '+n;b.onclick=()=>openSubject(n);box.appendChild(b)});
+let current='';
+function openSubject(n){current=n;document.getElementById('detail').classList.remove('hidden');document.getElementById('subjectTitle').textContent='📖 '+n;document.getElementById('videoLink').href='https://www.youtube.com/results?search_query='+encodeURIComponent('آموزش '+n+' هفتم');document.getElementById('exerciseLink').href='https://www.google.com/search?q='+encodeURIComponent('نمونه سوال '+n+' هفتم');document.getElementById('notes').value=localStorage.getItem('note-'+n)||'';document.getElementById('saved').textContent='';document.getElementById('detail').scrollIntoView({behavior:'smooth'})}
+document.getElementById('saveNotes').onclick=()=>{if(current){localStorage.setItem('note-'+current,document.getElementById('notes').value);document.getElementById('saved').textContent='ذخیره شد ✓'}};
+document.getElementById('savePlan').onclick=()=>{const p={date:studyDate.value,tasks:[task1.value,task2.value,task3.value]};localStorage.setItem('study-plan',JSON.stringify(p));planSaved.textContent='برنامه ذخیره شد ✓'};
+document.querySelectorAll('.answer').forEach(b=>b.onclick=()=>quizResult.textContent=b.dataset.a==='5'?'آفرین! پاسخ درست است 🎉':'یک بار دیگر تلاش کن 🌱');
+document.getElementById('saveProfile').onclick=()=>{const p={name:studentName.value,klass:studentClass.value,favorite:favorite.value,hobbies:hobbies.value,goal:goal.value};localStorage.setItem('student-profile',JSON.stringify(p));profileSaved.textContent='معرفی ذخیره شد ✓'};
+</script>
+</body></html>
